@@ -1,0 +1,9 @@
+@import '../../assets/styles/main.scss';
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  gap: 60px;
+  justify-content: center;
+  align-content: center;
+}

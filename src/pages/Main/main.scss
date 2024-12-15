@@ -1,0 +1,32 @@
+@import '../../assets/styles/main.scss';
+
+.main {
+  &__slogan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    max-width: 1920px;
+    width: 100%;
+    min-height: calc(100lvh - $headerHeight);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../public/background.jpg") center/cover no-repeat ;
+    color: $colorWhite;
+
+    &-title {
+      font-size: 80px;
+      font-weight: 500;
+      max-width: 880px;
+      text-align: center;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: inherit;
+      padding: 11px 42px;
+      background-color: $colorGreen;
+      border-radius: $borderRadius5;
+    }
+  }
+
+}
