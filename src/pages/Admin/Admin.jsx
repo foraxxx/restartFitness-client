@@ -1,4 +1,5 @@
 import React from 'react'
+import {observer} from "mobx-react-lite"
 
 const Admin = (props) => {
   return (
@@ -8,4 +9,4 @@ const Admin = (props) => {
   )
 }
 
-export default Admin
+export default observer(Admin)

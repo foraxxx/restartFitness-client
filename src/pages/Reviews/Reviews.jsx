@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from "../../shared/Header/Header.jsx"
 
 const Reviews = (props) => {
   return (
     <div>
-      Reviews
+      <Header/>
     </div>
   )
 }

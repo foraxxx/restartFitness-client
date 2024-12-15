@@ -1,11 +1,13 @@
 import React from 'react'
+import Header from "../../shared/Header/Header.jsx"
+import {observer} from "mobx-react-lite"
 
 const News = (props) => {
   return (
     <div>
-      News
+      <Header/>
     </div>
   )
 }
 
-export default News
+export default observer(News)

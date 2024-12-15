@@ -1,0 +1,81 @@
+@import '../../assets/styles/main.scss';
+
+.header{
+  max-width: 100%;
+  height: $headerHeight;
+  background-color: $colorBlack;
+  padding-inline: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 165px;
+  }
+
+  &__link {
+    height: $headerHeight;
+    font-weight: 500;
+    text-decoration: none;
+    color: $colorWhite;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    align-items: center;
+
+    &:hover:not(&--active) {
+      color: $colorGreen;
+      transition-duration: $transitionDuration;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 30px;
+
+    &-item {
+      position: relative;
+      display: inline-flex;
+      padding-inline: 15px;
+
+      &--active::after {
+        content: '';
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        translate: -50%;
+        width: 100%;
+        height: 2px;
+        background-color: $colorGreen;
+        transition-duration: inherit;
+      }
+    }
+  }
+
+  &__profile {
+    display: flex;
+    gap: 15px;
+    padding-inline: 15px;
+
+    font-size: 20px;
+
+    &--active {
+      color: $colorGreen;
+    }
+  }
+
+  &-image {
+    color: inherit;
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__button-notification {
+    border: none;
+    outline: none;
+    background: none;
+    color: $colorWhite;
+  }
+}

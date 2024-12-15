@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import {
   ADMIN_ROUTE,
@@ -21,30 +21,31 @@ import Trainer from "../pages/Trainer/Trainer.jsx"
 import Membership from "../pages/Membership/Membership.jsx"
 import Profile from "../pages/Profile/Profile.jsx"
 import Admin from "../pages/Admin/Admin.jsx"
-
-const isAuthenticated = true
-const userRole = 'Администратор'
-
+import {Context} from "../main.jsx"
+import {observer} from "mobx-react-lite"
 
 function GuestRoute({ children }) {
-  return isAuthenticated ? <Navigate to={MAIN_ROUTE} /> : children
+  const { userStore } = useContext(Context)
+  return userStore.isAuth ? <Navigate to={MAIN_ROUTE} /> : children
 }
 
 function ProtectedRoute({ children, allowedRoles }) {
-  if (!isAuthenticated) {
+  const { userStore } = useContext(Context)
+
+  if (!userStore.isAuth) {
     return <Navigate to={LOGIN_ROUTE} />
   }
 
-  if (!allowedRoles.includes(userRole)) {
+  if (!allowedRoles.includes(userStore.user.role)) {
     return <Navigate to={MAIN_ROUTE} />
   }
 
   return children
 }
 
-
-
 const AppRouter = (props) => {
+  const {userStore} = useContext(Context)
+
   return (
     <Routes>
       {/*Публичные роуты*/}
@@ -94,10 +95,9 @@ const AppRouter = (props) => {
         }
       />
 
-
       <Route path="*" element={<Navigate to={MAIN_ROUTE}/>}/>
     </Routes>
   )
 }
 
-export default AppRouter
+export default observer(AppRouter)
