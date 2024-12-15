@@ -1,0 +1,61 @@
+@import '../../assets/styles/main.scss';
+
+.card {
+  text-decoration: none;
+  background: linear-gradient(to bottom right, #009245, #6bce84);
+  border-radius: 15px;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  //margin: 0 auto;
+}
+
+.card-header .duration {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.card-body h3 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
+.card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.card-body ul li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.buy-btn {
+  background-color: #ffffff;
+  color: #009245;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.buy-btn:hover {
+  background-color: #f1f1f1;
+}

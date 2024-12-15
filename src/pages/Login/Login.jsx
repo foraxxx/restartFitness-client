@@ -5,6 +5,7 @@ import {Link, useNavigate} from "react-router-dom"
 import {observer} from "mobx-react-lite"
 import {Context} from "../../main.jsx"
 import {MAIN_ROUTE, SIGNUP_ROUTE} from "../../utils/consts.js"
+import './login.scss'
 
 const Login = (props) => {
   const navigate = useNavigate();
@@ -26,11 +27,10 @@ const Login = (props) => {
           margin: '0 auto', // Центрируем форму
         }}
       >
-        <h1 style={{ textAlign: 'center' }}>Авторизация</h1> {/* Заголовок */}
+        <h1 style={{ textAlign: 'center', color: '#88BC31'}}>Авторизация</h1> {/* Заголовок */}
 
         <Form.Item
           name="number"
-          label="Phone"
           rules={[
             {
               required: true,
@@ -50,13 +50,13 @@ const Login = (props) => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" block>
-            Submit
+          <Button type="primary" htmlType="submit" block className='button'>
+            Войти
           </Button>
         </Form.Item>
 
         <Form.Item style={{ textAlign: 'center' }}>
-          <Link to={SIGNUP_ROUTE}>Регистрация</Link>
+          <Link to={SIGNUP_ROUTE} className='link'>Регистрация</Link>
         </Form.Item>
       </Form>
     </>

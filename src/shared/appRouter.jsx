@@ -26,7 +26,7 @@ import {observer} from "mobx-react-lite"
 
 const AppRouter = (props) => {
   const {userStore} = useContext(Context)
-  console.log(userStore)
+  // console.log(userStore)
   const GuestRoute = ({ children }) => {
     return userStore.isAuth ? <Navigate to={MAIN_ROUTE} /> : children
   }

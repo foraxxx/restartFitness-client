@@ -5,6 +5,7 @@ import {Context} from "../../main.jsx"
 import Header from "../../shared/Header/Header.jsx"
 import {LOGIN_ROUTE, MAIN_ROUTE} from "../../utils/consts.js"
 import {observer} from "mobx-react-lite"
+import './SignIn.scss'
 
 const SignUp = (props) => {
   const navigate = useNavigate();
@@ -25,11 +26,10 @@ const SignUp = (props) => {
           margin: '0 auto',
         }}
       >
-        <h1 style={{ textAlign: 'center' }}>Регистрация</h1>
+        <h1 style={{ textAlign: 'center', color: '#88BC31'}}>Регистрация</h1>
 
         <Form.Item
           name="name"
-          label="Имя"
           rules={[
             {
               required: true,
@@ -44,7 +44,6 @@ const SignUp = (props) => {
 
         <Form.Item
           name="surName"
-          label="Фамилия"
           rules={[
             {
               required: true,
@@ -59,7 +58,6 @@ const SignUp = (props) => {
 
         <Form.Item
           name="number"
-          label="Номер телефона"
           rules={[
             {
               required: true,
@@ -79,13 +77,13 @@ const SignUp = (props) => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" block>
-            Отправить
+          <Button type="primary" htmlType="submit" block className="button">
+            Зарегистрироваться
           </Button>
         </Form.Item>
 
         <Form.Item style={{ textAlign: 'center' }}>
-          <NavLink to={LOGIN_ROUTE}>Авторизация</NavLink>
+          <NavLink to={LOGIN_ROUTE} className="link">Авторизация</NavLink>
         </Form.Item>
       </Form>
     </>

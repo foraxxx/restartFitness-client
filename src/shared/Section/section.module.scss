@@ -3,7 +3,7 @@
 .section {
   max-width: $containerWidth;
   width: 100%;
-  margin-top: $marginBig;
+  margin-block: $marginBig;
   margin-inline: auto;
 
   &__title {
