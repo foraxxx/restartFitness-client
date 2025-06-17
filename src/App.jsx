@@ -8,11 +8,8 @@ function App() {
   const {userStore} = useContext(Context)
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      userStore.checkAuth()
-      userStore.startTokenRefresh()
-    }
-  }, [userStore])
+    userStore.checkAuth()
+  }, [])
 
   return (
     <BrowserRouter>

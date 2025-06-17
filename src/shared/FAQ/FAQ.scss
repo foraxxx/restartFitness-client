@@ -1,0 +1,53 @@
+@import '../../assets/styles/main.scss';
+
+.faq-container {
+  max-width: $containerWidth;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+  margin: 50px auto 0 auto;
+  padding: 30px;
+
+  .faq-title {
+    font-size: $fontSize40;
+    margin-bottom: 30px;
+    color: $colorWhite;
+  }
+
+  .ant-collapse {
+    background-color: $colorBgc;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+
+  .ant-collapse-header {
+    font-size: 20px;
+    font-weight: 500;
+
+    .ant-collapse-expand-icon {
+      svg {
+        display: none;
+        height: 18px;
+        width: 18px;
+        fill: $colorWhite;
+      }
+    }
+
+    // Иногда стрелка задаётся через псевдоэлемент
+    &::before {
+      color: $colorWhite;
+    }
+  }
+
+  .ant-collapse-content > .ant-collapse-content-box {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: $colorWhite;
+    background-color: $colorBgc;
+  }
+}
+.ant-collapse-header-text {
+  color: $colorWhite;
+}

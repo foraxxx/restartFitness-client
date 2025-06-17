@@ -1,19 +1,23 @@
 @import '../../assets/styles/main.scss';
 
-.card {
+.card-m {
   text-decoration: none;
-  background: linear-gradient(to bottom right, #009245, #6bce84);
+  background: $colorBgc;
   border-radius: 15px;
   color: #fff;
   padding: 20px;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  //margin: 0 auto;
+  max-width: 350px;
+  transition-duration: $transitionDuration;
+
+  &:hover {
+    box-shadow: $shadow;
+  }
 }
 
+
 .card-header .duration {
-  background-color: #333;
+  background-color: $colorAccent;
   color: #fff;
   padding: 5px 10px;
   border-radius: 10px;
@@ -58,4 +62,8 @@
 
 .buy-btn:hover {
   background-color: #f1f1f1;
+}
+
+.notUser {
+  color: $colorAccent;
 }

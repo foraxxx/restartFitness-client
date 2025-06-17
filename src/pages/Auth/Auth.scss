@@ -1,0 +1,6 @@
+@import '../../assets/styles/main.scss';
+
+input::placeholder {
+  color: $colorWhite !important;
+  opacity: 1;
+}

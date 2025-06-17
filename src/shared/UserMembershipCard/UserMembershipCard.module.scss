@@ -1,0 +1,29 @@
+@import '../../assets/styles/main.scss';
+
+.membershipCard {
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-left: 5px solid #4caf50;
+  border-radius: 8px;
+
+  p {
+    margin: 5px 0;
+  }
+}
+
+.active {
+  border-left-color: $colorAccent; // зелёный
+}
+
+.planned {
+  border-left-color: $colorOrange; // синий
+}
+
+.frozen {
+  border-left-color: $colorBlue; // жёлтый
+}
+
+.finished {
+  border-left-color: #ff4d4f; // красный
+}
+

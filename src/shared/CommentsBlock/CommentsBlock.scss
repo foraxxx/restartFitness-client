@@ -1,0 +1,26 @@
+@import '../../assets/styles/main.scss';
+
+.comments{
+
+  &__block {
+    max-width: $containerWidthSmall;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: $colorDark;
+    border-radius: $borderRadius30;
+    box-shadow: $shadow;
+  }
+
+  &__title {
+    font-size: $fontSize40;
+    color: $colorWhite;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+}
+
+h1 {
+  font-size: $fontSize40;
+  color: $colorWhite;
+}

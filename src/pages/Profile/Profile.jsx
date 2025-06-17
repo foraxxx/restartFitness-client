@@ -1,75 +1,84 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useRef, useState} from 'react'
 import Header from "../../shared/Header/Header.jsx"
 import {observer} from "mobx-react-lite"
 import {Context} from "../../main.jsx"
 import {useNavigate} from "react-router-dom"
 import {MAIN_ROUTE} from "../../utils/consts.js"
 import './profile.scss'
+import ProfileInfo from "../../shared/ProfileInfo/ProfileInfo.jsx"
+import MyMemberships from "../../shared/MyMemberships/MyMemberships.jsx"
+import { Tour } from 'antd';
 
-const Profile = (props) => {
-  const navigate = useNavigate();
-  const {userStore, userMembershipStore} = useContext(Context)
-  const [memberships, setMemberships] = useState([])
+const Profile = () => {
+  const [activeTab, setActiveTab] = useState("profile");
+  const membershipsRef = useRef(null);
+  const [openTour, setOpenTour] = useState(false);
+  const membershipCardRef = useRef(null);
+
+  const tourSteps = [
+    {
+      title: 'Ваши абонементы',
+      description: 'Здесь вы можете просматривать свои абонементы и управлять ими.',
+      target: () => membershipsRef.current,
+    },
+    {
+      title: 'Абонемент',
+      target: () => membershipCardRef.current,
+      description: 'Это ваша активная подписка.',
+    },
+  ];
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await userMembershipStore.getUserAll();
-      setMemberships(response)
-    };
+    const shouldStartTour = localStorage.getItem('startMembershipTour') === 'true';
+    if (shouldStartTour) {
+      setOpenTour(true);
+      localStorage.removeItem('startMembershipTour');
+    }
+  }, []);
 
-    fetchData();
-  }, [userMembershipStore])
 
-  const logout = () => {
-    userStore.logout()
-    navigate(MAIN_ROUTE)
-  }
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const year = date.getFullYear();  // Получаем год
-    const month = String(date.getMonth() + 1).padStart(2, '0');  // Получаем месяц и добавляем ведущий ноль
-    const day = String(date.getDate()).padStart(2, '0');  // Получаем день и добавляем ведущий ноль
-
-    return `${year}.${month}.${day}`;  // Форматируем в строку
-  };
-
-  // memberships.map((membership) => console.log(membership.id))
-  console.log(userMembershipStore.userMemberships)
   return (
-    <div className="profile">
+    <>
       <Header/>
 
-      <div className="profile-info">
-        <div className="profile-block">
-          <h1 className="profile-title">Профиль пользователя</h1>
-          <div className="user-details">
-            <p><strong>Номер:</strong> {userStore.user.number}</p>
-            <p><strong>Роль:</strong> {userStore.user.role}</p>
-          </div>
+      <div className="profile-panel">
+        <div className="sidebar">
+          <h2 className="sidebar-title">Личный кабинет</h2>
+          <ul className="menu">
+            <li
+              className={`menu-item ${activeTab === "profile" ? "active" : ""}`}
+              onClick={() => setActiveTab("profile")}
+            >
+              Профиль
+            </li>
+            <li
+              ref={membershipsRef}
+              className={`menu-item ${activeTab === "memberships" ? "active" : ""}`}
+              onClick={() => setActiveTab("memberships")}
+            >
+              Мои абонементы
+            </li>
+          </ul>
         </div>
-        <button className="logout-btn" onClick={logout}>Выйти</button>
-      </div>
 
-      <div className="user-memberships">
-        <h2>Мои абонементы</h2>
-        {memberships.length > 0 ? (
-          <div className="membership-list">
-            {memberships.map((membership) => {
-              console.log(membership)
-              return (
-
-              <div className="membership-card" key={membership.id}>
-                <h3>{membership.name}</h3>
-                <p><strong>Срок действия:</strong> {`${formatDate(membership.dateStart)} - ${formatDate(membership.dateEnd)}`}</p>
-              </div>
-            )})}
-          </div>
-        ) : (
-          <p>У вас нет абонементов.</p>
-        )}
+        <div className="content">
+          {activeTab === "profile" && (
+            <div>
+              <h3 className="content-title">Профиль пользователя</h3>
+              <ProfileInfo/>
+            </div>
+          )}
+          {activeTab === "memberships" && (
+            <div>
+              <h3 className="content-title">Мои абонементы</h3>
+              <MyMemberships/>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+      {/*<Tour open={openTour} onClose={() => setOpenTour(false)} steps={tourSteps} />*/}
+
+    </>
   )
 }
 

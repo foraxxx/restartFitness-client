@@ -3,7 +3,8 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, 350px);
-  gap: 60px;
-  justify-content: center;
-  align-content: center;
+  gap: 40px;
+  max-width: 100%;
+  //justify-content: center;
+  //align-content: center;
 }

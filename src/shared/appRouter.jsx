@@ -1,17 +1,14 @@
 import React, {useContext, useState} from 'react'
 import {Routes, Route, Navigate} from 'react-router-dom'
 import {
-  ADMIN_ROUTE,
+  ADMINPANEL_ROUTE, ADMINPANEL_USER_ROUTE, AUTH_ROUTE,
   CONTACTS_ROUTE,
-  LOGIN_ROUTE,
   MAIN_ROUTE, MEMBERSHIP_ROUTE,
   NEWS_ROUTE, PROFILE_ROUTE,
   REVIEWS_ROUTE,
-  SERVICES_ROUTE,
-  SIGNUP_ROUTE, TRAINER_ROUTE
+  SERVICES_ROUTE, TRAINER_ROUTE
 } from "../utils/consts.js"
-import Login from "../pages/Login/Login.jsx"
-import SignUp from "../pages/SignUp/SignUp.jsx"
+import Auth from "../pages/Auth/Auth.jsx"
 import Main from "../pages/Main/Main.jsx"
 import News from "../pages/News/News.jsx"
 import Services from "../pages/Services/Services.jsx"
@@ -20,9 +17,10 @@ import Reviews from "../pages/Reviews/Reviews.jsx"
 import Trainer from "../pages/Trainer/Trainer.jsx"
 import Membership from "../pages/Membership/Membership.jsx"
 import Profile from "../pages/Profile/Profile.jsx"
-import Admin from "../pages/Admin/Admin.jsx"
 import {Context} from "../main.jsx"
 import {observer} from "mobx-react-lite"
+import AdminPanel from "../pages/AdminPanel/AdminPanel.jsx"
+import UserPage from "../pages/UserPage/UserPage.jsx"
 
 const AppRouter = (props) => {
   const {userStore} = useContext(Context)
@@ -33,7 +31,7 @@ const AppRouter = (props) => {
 
   function ProtectedRoute({ children, allowedRoles }) {
     if (!userStore.isAuth) {
-      return <Navigate to={LOGIN_ROUTE} />
+      return <Navigate to={AUTH_ROUTE} />
     }
 
     if (!allowedRoles.includes(userStore.user.role)) {
@@ -56,20 +54,12 @@ const AppRouter = (props) => {
 
       {/*Роуты для неавторизованных*/}
       <Route
-        path={LOGIN_ROUTE}
+        path={AUTH_ROUTE}
         element={
         <GuestRoute>
-          <Login/>
+          <Auth/>
         </GuestRoute>
       }
-      />
-      <Route
-        path={SIGNUP_ROUTE}
-        element={
-          <GuestRoute>
-            <SignUp/>
-          </GuestRoute>
-        }
       />
 
     {/*Роуты авторизованных*/}
@@ -84,10 +74,19 @@ const AppRouter = (props) => {
 
       {/* Маршруты для админов */}
       <Route
-        path={ADMIN_ROUTE}
+        path={ADMINPANEL_ROUTE}
         element={
-          <ProtectedRoute allowedRoles={['admin']}>
-            <Admin/>
+          <ProtectedRoute allowedRoles={['Администратор']}>
+            <AdminPanel/>
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path={ADMINPANEL_USER_ROUTE}
+        element={
+          <ProtectedRoute allowedRoles={['Администратор']}>
+            <UserPage/>
           </ProtectedRoute>
         }
       />

@@ -5,7 +5,7 @@ const Section = (props) => {
   const {title, children} = props
   return (
     <section className={styles.section}>
-      <h2 className={styles.section__title}>{title}</h2>
+      <p className={styles.title}>{title}</p>
       {children}
     </section>
   )

@@ -7,9 +7,14 @@
     justify-content: center;
     align-items: center;
 
-    max-width: 1920px;
+    max-width: $containerWidth;
+    margin: 0 auto;
+    margin-bottom: 50px;
     width: 100%;
-    min-height: calc(100lvh - $headerHeight);
+    min-height: 100lvh;
+
+    border-radius: $borderRadius30;
+    box-shadow: $shadow;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../../../public/background.jpg") center/cover no-repeat ;
     color: $colorWhite;
 
@@ -24,7 +29,7 @@
       text-decoration: none;
       color: inherit;
       padding: 11px 42px;
-      background-color: $colorGreen;
+      background-color: $colorAccent;
       border-radius: $borderRadius5;
     }
   }

@@ -1,0 +1,88 @@
+@import '../../assets/styles/main.scss';
+
+.container {
+  max-width: $containerWidth;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.title {
+  margin-bottom: 24px;
+  font-size: $fontSize40;
+  font-weight: 500;
+  color: $colorWhite;
+}
+
+.reviewCard {
+  //background-color: #1f1f1f;
+  background-color: $colorBgc;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: $transitionDuration;
+
+  &:hover {
+    box-shadow: $shadow;
+  }
+}
+
+.reviewAuthor {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.reviewText {
+  flex: 1;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.reviewFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewRating {
+  margin-bottom: 8px;
+}
+
+.reviewDate {
+  font-size: 12px;
+  color: #aaa;
+  text-align: right;
+}
+
+.buttonWrapper {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+
+.whiteLabel .ant-form-item-label > label {
+  color: white;
+}
+
+/* Белые незаполненные звезды в Rate */
+.whiteRate .ant-rate-star-zero .ant-rate-star-second,
+.whiteRate .ant-rate-star-zero .ant-rate-star-first {
+  color: white;
+}
+
+
+
+.whiteRate .ant-rate-star-zero {
+  background-color: white;
+  border-radius: 2px;
+}
+
+.whiteRate :global(.ant-rate-star-zero) svg {
+  color: white; // Цвет невыбранных звёзд
+  opacity: 0.5; // Можно сделать полупрозрачным, если нужно
+}

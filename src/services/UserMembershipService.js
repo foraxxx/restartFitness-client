@@ -8,4 +8,12 @@ export default class UserMembershipService {
   static async getUserAll() {
     return $api.get(`/usermemberships/`)
   }
+
+  static async freezing(membershipId, dateStart, dateEnd) {
+    return $api.put(`/usermemberships/freezing`, {
+      membershipId,
+      dateStart,
+      dateEnd,
+    });
+  }
 }

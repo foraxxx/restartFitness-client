@@ -4,11 +4,18 @@
   max-width: $containerWidth;
   width: 100%;
   margin-block: $marginBig;
-  margin-inline: auto;
+  margin: 0 auto 50px auto;
 
-  &__title {
-    margin-bottom: $marginSmall;
-    font-size: $fontSize40;
-    color: $colorGreen;
-  }
+  padding: 30px;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+}
+
+.title {
+  margin-bottom: 20px;
+
+  font-size: $fontSize40;
+  font-weight: 500;
+  color: $colorWhite;
 }

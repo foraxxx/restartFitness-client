@@ -5,11 +5,23 @@ export default class MembershipService {
     return $api.get('/memberships/active')
   }
 
-  // static async registration(name, surName, number) {
-  //   return $api.post('/user/registration', {name, surName, number})
-  // }
-  //
-  // static async logout() {
-  //   return $api.post('/user/logout')
-  // }
+  static async getOne(id) {
+    return $api.get(`/memberships/${id}`)
+  }
+
+  static async getAll() {
+    return $api.get(`/memberships`)
+  }
+
+  static async create(data) {
+    return $api.post('/memberships', data);
+  }
+
+  static async update(id, data) {
+    return $api.put(`/memberships/${id}`, data);
+  }
+
+  static async delete(id) {
+    return $api.delete(`/memberships/${id}`);
+  }
 }

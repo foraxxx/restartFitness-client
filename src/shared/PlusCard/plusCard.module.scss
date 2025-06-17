@@ -4,13 +4,15 @@
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  border: 2px solid $colorLightGray;
+  //border: 2px solid $colorLightGray;
+  background-color: $colorBgc;
   border-radius: $borderRadius15;
   padding: 27px 30px;
-  color: $colorBlack;
+  color: $colorWhite;
+  height: 100%;
 
   &:hover {
-    color: $colorGreen;
+    color: $colorAccent;
     transition-duration: $transitionDuration;
     box-shadow: $shadow;
   }

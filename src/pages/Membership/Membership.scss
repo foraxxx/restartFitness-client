@@ -1,0 +1,77 @@
+@import '../../assets/styles/main.scss';
+
+.membership-container {
+  display: flex;
+  justify-content: center;
+}
+
+.membershipCard {
+  max-width: 1000px;
+  width: 100%;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+  padding: 32px;
+}
+
+.membershipTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: $colorWhite;
+}
+
+.membershipDescription {
+  padding-bottom: 16px;
+  border-bottom: 2px solid $colorGray;
+  white-space: pre-line;
+  margin-bottom: 16px;
+  color: $colorWhite;
+}
+
+.membershipRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.membershipRow span {
+  color: $colorWhite;
+}
+
+.membershipPrice {
+  color: #27ae60;
+}
+
+.membership-button-wrapper {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.notUser {
+  color: $colorGreen;
+}
+
+.characters {
+
+}
+
+.membershipButton {
+  border: none;
+  padding: 8px 26px;
+  border-radius: $borderRadius10;
+  background-color: $colorAccent;
+
+  font-weight: 500;
+  font-size: $fontSize18;
+  letter-spacing: 0.05em;
+  color: $colorWhite;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    background-color: $colorGreen;
+    transition-duration: $transitionDuration;
+  }
+}

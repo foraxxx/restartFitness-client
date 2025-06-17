@@ -1,0 +1,284 @@
+@import '../../assets/styles/main.scss';
+
+
+
+.admin-panel {
+  display: flex;
+  justify-content: center;
+  max-width: $containerWidth;
+  margin: 0 auto;
+  //padding: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.ant-modal-confirm .ant-modal-confirm-title,
+.ant-modal-confirm .ant-modal-confirm-content {
+  color: white;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+  color: white;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.menu-item:hover {
+  background-color: #3c3c3c;
+}
+
+.menu-item.active {
+  background-color: $colorAccent;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-filters {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: $borderRadius30;
+  background-color: $colorDark;
+}
+
+.filter-input {
+  padding: 15px 25px;
+  margin-bottom: 5px;
+  border: 2px solid $colorGray;
+  border-radius: $borderRadius15;
+
+  font-size: $fontSize18;
+  color: $colorWhite;
+  background-color: transparent !important;
+
+  &:focus, &:hover {
+    border-color: $colorAccent;
+  }
+
+  &::placeholder {
+    color: $colorGray;
+  }
+}
+
+.add-news-button {
+  padding: 8px 26px;
+  border-radius: $borderRadius10;
+  background-color: $colorAccent;
+
+  font-weight: 500;
+  font-size: $fontSize18;
+  letter-spacing: 0.05em;
+  color: $colorWhite;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    //background-color: darken($colorPrimary, 10%);
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 800px;
+  padding: 30px;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+  color: $colorWhite;
+}
+
+.content-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-card {
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: $shadow;
+}
+
+.news-video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  max-height: 450px;
+  border-radius: 12px;
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.news-media {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto 15px;
+  justify-content: center;
+}
+
+.image-wrapper {
+  max-height: 500px;
+  //height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 calc(50% - 30px);
+  width: 10px;
+  overflow: hidden;
+  border-radius: $borderRadius5;
+}
+
+.image-wrapper .image {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  border-radius: $borderRadius5;
+}
+
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+@media (max-width: 768px) {
+  .news-image {
+    width: 100%;
+  }
+}
+
+.news-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.ant-input::placeholder {
+  color: $colorBlack;
+}
+
+.ant-picker-input input::placeholder {
+  color: $colorWhite;
+}
+
+.ant-picker .ant-picker-input::placeholder {
+  color: $colorWhite;
+}
+
+.ant-upload-list-item-name {
+  color: $colorWhite;
+}
+
+.ant-upload-icon svg{
+  fill: $colorWhite;
+}
+
+.news-text {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.news-date,
+.news-author {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 14px;
+  color: $colorGray;
+}
+
+.ant-form-item-required {
+  color: $colorWhite;
+}
+
+
+.ant-modal {
+  border-radius: 30px;
+  color: white;
+}
+
+.ant-modal-header {
+  background-color: #333;
+  border-bottom: 1px solid #555;
+}
+
+.ant-modal-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: #f5f5f5;
+}
+
+.ant-modal-body {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.ant-modal-footer {
+  background-color: #333;
+  border-top: 1px solid #555;
+}
+
+.ant-btn-primary {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.ant-btn-primary:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+}

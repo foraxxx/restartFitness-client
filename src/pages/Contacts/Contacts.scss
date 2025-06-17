@@ -1,0 +1,86 @@
+@import '../../assets/styles/main.scss';
+
+.contacts-page {
+  display: flex;
+  flex-direction: column;
+
+  color: $colorWhite;
+}
+
+.contacts-container {
+  max-width: $containerWidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: $colorDark;
+  border-radius: $borderRadius30;
+  box-shadow: $shadow;
+}
+
+.contacts-title {
+  font-size: $fontSize40;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.contacts-details {
+  flex: 1;
+
+  h2 {
+    font-size: $fontSize40;
+    margin-top: 20px;
+    color: $colorAccent;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: $colorWhite;
+  }
+
+  a {
+    text-decoration: underline;
+    color: $colorWhite;
+
+    &:hover {
+      color: $colorAccent;
+    }
+  }
+
+  .contacts-socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+
+    a {
+      font-weight: 500;
+      color: $colorAccent;
+    }
+  }
+}
+
+.contacts-map {
+  flex: 1;
+  margin-top: 30px;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+
+  iframe {
+    border-radius: $borderRadius30;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+  }
+}

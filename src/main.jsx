@@ -6,6 +6,8 @@ import UserStore from "./store/UserStore.js"
 import MembershipStore from "./store/MembershipStore.js"
 import TrainerStore from "./store/TrainerStore.js"
 import UserMembershipStore from "./store/UserMembershipsStore.js"
+import newsStore from "./store/NewsStore.js"
+import reviewsStore from "./store/ReviewsStore.js"
 
 const userStore = new UserStore()
 const membershipStore = new MembershipStore()
@@ -16,16 +18,25 @@ export const Context = createContext({
   userStore,
   membershipStore,
   trainerStore,
-  userMembershipStore
+  userMembershipStore,
+  newsStore,
+  reviewsStore,
 })
 
-createRoot(document.getElementById('root')).render(
-  <Context.Provider value={{
-    userStore,
-    membershipStore,
-    trainerStore,
-    userMembershipStore
-  }}>
-  <App />
-  </Context.Provider>
-)
+const container = document.getElementById('root');
+
+if (!container._reactRootContainer) {
+  const root = createRoot(container);
+  root.render(
+    <Context.Provider value={{
+      userStore,
+      membershipStore,
+      trainerStore,
+      userMembershipStore,
+      newsStore,
+      reviewsStore,
+    }}>
+      <App />
+    </Context.Provider>
+  );
+}
