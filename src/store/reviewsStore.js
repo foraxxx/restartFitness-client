@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import ReviewService from "../services/ReviewService.js";
+import ReviewService from "../services/reviewService.js";
 
 class ReviewStore {
   published = [];
