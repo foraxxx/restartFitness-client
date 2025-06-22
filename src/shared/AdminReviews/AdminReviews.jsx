@@ -65,6 +65,11 @@ const AdminReviews = () => {
       key: "description",
     },
     {
+      title: "Рейтинг",
+      dataIndex: "rating",
+      key: "rating",
+    },
+    {
       title: "Статус",
       key: "status",
       render: (_, record) => (

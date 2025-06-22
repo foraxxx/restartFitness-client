@@ -9,6 +9,7 @@ import {Button, Modal, Form, Input, Select, message} from "antd"
 import {MAIN_ROUTE} from "../../utils/consts.js"
 import AdminMemberships from "../../shared/AdminMemberships/AdminMemberhips.jsx"
 import AdminReviews from "../../shared/AdminReviews/AdminReviews.jsx"
+import AnalyticsDashboard from "../../shared/Analyticsdashboard/AnalyticsDashboard.jsx"
 
 const AdminPanel = observer(() => {
   const [activeTab, setActiveTab] = useState("users");
@@ -140,8 +141,9 @@ const AdminPanel = observer(() => {
 
           {activeTab === "analytics" && (
             <div>
-              <h3 className="content-title">Аналитика</h3>
-              <p>Заглушка: сюда можно добавить графики, метрики и статистику.</p>
+              {/*<h3 className="content-title">Аналитика</h3>*/}
+              {/*<p>Заглушка: сюда можно добавить графики, метрики и статистику.</p>*/}
+              <AnalyticsDashboard/>
             </div>
           )}
         </div>
