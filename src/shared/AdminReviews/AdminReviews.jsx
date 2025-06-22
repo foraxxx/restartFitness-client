@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Table, Select, Button, Popconfirm, message, Tag } from "antd";
-import ReviewService from "../../services/ReviewService.js"; // Убедись, что сервис реализован
+import ReviewService from "../../services/reviewService.js"; // Убедись, что сервис реализован
 
 const { Option } = Select;
 
