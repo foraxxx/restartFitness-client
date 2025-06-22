@@ -14,6 +14,6 @@ export const ADMINPANEL_ROUTE = '/adminPanel'
 export const ADMINPANEL_USER_ROUTE = '/adminPanel/user/:id'
 
 
-  export const API_URL = 'http://localhost:5000/api'
-export const URL_TO_API = 'http://localhost:5000/'
+export const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+export const URL_TO_API = import.meta.env.VITE_URL_TO_API || 'http://localhost:5000/'
 
