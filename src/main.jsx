@@ -7,7 +7,7 @@ import MembershipStore from "./store/MembershipStore.js"
 import TrainerStore from "./store/TrainerStore.js"
 import UserMembershipStore from "./store/UserMembershipsStore.js"
 import newsStore from "./store/NewsStore.js"
-import reviewsStore from "./store/ReviewsStore.js"
+import reviewsStore from "./store/reviewsStore.js"
 
 const userStore = new UserStore()
 const membershipStore = new MembershipStore()
